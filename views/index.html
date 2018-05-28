@@ -673,6 +673,7 @@
 
       $('#sendmail').click(function () {
         clear();
+        setMsg('Sending pls wait..');
         var emaildata = $('#emailForm').serialize();
         $.ajax({
 
@@ -701,16 +702,19 @@
       })
 
       function clear() {
-        $('#msg').removeClass('alert-success')
-        $('#msg').removeClass('alert-danger')
+        $('#msg').removeClass('alert-success');
+        $('#msg').removeClass('alert-danger');
+        $('#msg').addClass('alert-warning');
       }
       function setMsg(msg) {
         $('#msg').html(msg);
       }
       function setSuccess() {
+        $('#msg').removeClass('alert-warning');
         $('#msg').addClass('alert-success')
       }
       function setError() {
+        $('#msg').removeClass('alert-warning');
         $('#msg').addClass('alert-danger')
       }
     })

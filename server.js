@@ -34,10 +34,10 @@ app.post('/', function (req, res) {
   var comments = req.body.comments;
   var mailOptions = {
     from: email,
-    to: 'sandeepj1672@gmail.com',
-    bcc:'rithanyaconstructionsweb@gmail.com',
+    to: 'Sandeepj1672@gmail.com',
+    bcc: 'rithanyaconstructionsweb@gmail.com',
     subject: 'Rithanya Constructions Enquiry from ' + name,
-    text: comments
+    html: '<b>email : ' + email + '</b><br/>' + comments
   };
   var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -47,7 +47,7 @@ app.post('/', function (req, res) {
     }
   });
   transporter.sendMail(mailOptions, function (error, info) {
-    var emailsent = false
+    var emailsent = false;
     if (error) {
       console.log(error);
     } else {
