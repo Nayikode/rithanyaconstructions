@@ -34,7 +34,8 @@ app.post('/', function (req, res) {
   var comments = req.body.comments;
   var mailOptions = {
     from: email,
-    to: 'muralidhara.hm@gmail.com',
+    to: 'sandeepj1672@gmail.com',
+    bcc:'rithanyaconstructionsweb@gmail.com',
     subject: 'Rithanya Constructions Enquiry from ' + name,
     text: comments
   };
